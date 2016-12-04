@@ -1,10 +1,23 @@
 package br.inf.ufg.sempreufg.dominio;
 
+import javax.persistence.Entity;
+import javax.persistence.EnumType;
+import javax.persistence.Enumerated;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+
 import br.inf.ufg.sempreufg.dominio.enuns.TipoInstituicao;
 
+@Entity(name="InstituicaoEnsinoMedio")
 public class InstituicaoEnsinoMedio {
 	
+	@Id
+	@GeneratedValue(strategy = GenerationType.AUTO)
+	private long id;
 	private String nome;
+	
+	@Enumerated(EnumType.STRING)
 	private TipoInstituicao tipoInstituicao;
 	
 	public String getNome() {

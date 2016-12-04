@@ -1,6 +1,16 @@
 package br.inf.ufg.sempreufg.dominio;
 
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+
+@Entity(name="HistoricoEnsinoMedio")
 public class HistoricoEnsinoMedio {
+	
+	@Id
+	@GeneratedValue(strategy = GenerationType.AUTO)
+	private long id;
 	private String mesInicio;
 	private String anoInicio;
 	private String mesFim;

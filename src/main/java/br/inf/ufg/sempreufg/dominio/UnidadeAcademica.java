@@ -1,7 +1,16 @@
 package br.inf.ufg.sempreufg.dominio;
 
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+
+@Entity(name="UnidadeAcademica")
 public class UnidadeAcademica {
-	private int codigo;
+	
+	@Id
+	@GeneratedValue(strategy = GenerationType.AUTO)
+	private long id;
 	private String nome;
 
 	public String getNome() {
@@ -12,11 +21,11 @@ public class UnidadeAcademica {
 		this.nome = nome;
 	}
 
-	public int getCodigo() {
-		return codigo;
+	public long getId() {
+		return id;
 	}
 
-	public void setCodigo(int codigo) {
-		this.codigo = codigo;
+	public void setId(long id) {
+		this.id = id;
 	}
 }

@@ -1,16 +1,29 @@
 package br.inf.ufg.sempreufg.dominio;
 
+import javax.persistence.Entity;
+import javax.persistence.EnumType;
+import javax.persistence.Enumerated;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+
 import br.inf.ufg.sempreufg.dominio.enuns.Nivel;
 import br.inf.ufg.sempreufg.dominio.enuns.TipoInstituicao;
 
+@Entity(name="CursoOutraInstituicaoEnsino")
 public class CursoOutraInstituicaoEnsino {
 	
-	private int id;
+	@Id
+	@GeneratedValue(strategy = GenerationType.AUTO)
+	private long id;
 	private String nome;
 	private Nivel nivel;
 	private String nomeUnidadeAcademica;
 	private String IesDoCurso;
+	
+	@Enumerated(EnumType.STRING)
 	private TipoInstituicao tipoInstituicao;
+	
 	private String urlInstitucional;
 	public String getNome() {
 		return nome;
@@ -48,12 +61,10 @@ public class CursoOutraInstituicaoEnsino {
 	public void setUrlInstitucional(String urlInstitucional) {
 		this.urlInstitucional = urlInstitucional;
 	}
-	public int getId() {
+	public long getId() {
 		return id;
 	}
-	public void setId(int id) {
+	public void setId(long id) {
 		this.id = id;
 	}
-	
-	
 }

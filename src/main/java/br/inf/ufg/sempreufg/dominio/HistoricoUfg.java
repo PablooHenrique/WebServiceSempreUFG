@@ -1,8 +1,16 @@
 package br.inf.ufg.sempreufg.dominio;
 
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+
+@Entity(name="HistoricoUfg")
 public class HistoricoUfg {
 	
-	private int id;
+	@Id
+	@GeneratedValue(strategy=GenerationType.AUTO)
+	private long id;
 	private int numeroMatriculaCurso;
 	private int mesInicio;
 	private int anoInicio;
@@ -46,10 +54,10 @@ public class HistoricoUfg {
 	public void setTituloTrabalhoFinal(String tituloTrabalhoFinal) {
 		this.tituloTrabalhoFinal = tituloTrabalhoFinal;
 	}
-	public int getId() {
+	public long getId() {
 		return id;
 	}
-	public void setId(int id) {
+	public void setId(long id) {
 		this.id = id;
 	}
 }
