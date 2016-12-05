@@ -13,7 +13,7 @@ import br.inf.ufg.sempreufg.dominio.enuns.Nivel;
 import br.inf.ufg.sempreufg.dominio.enuns.TipoResolucao;
 import br.inf.ufg.sempreufg.dominio.enuns.Turno;
 
-@Entity(name="CursoUfg")
+@Entity(name="cursoufg")
 public class CursoUfg {
 	
 	@Id

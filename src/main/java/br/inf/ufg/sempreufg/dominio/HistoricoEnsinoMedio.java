@@ -5,7 +5,7 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
-@Entity(name="HistoricoEnsinoMedio")
+@Entity(name="historicoensinomedio")
 public class HistoricoEnsinoMedio {
 	
 	@Id

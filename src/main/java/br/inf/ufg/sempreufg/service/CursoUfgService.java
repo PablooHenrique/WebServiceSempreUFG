@@ -1,5 +1,7 @@
 package br.inf.ufg.sempreufg.service;
 
+import java.util.List;
+
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.Transaction;
@@ -16,7 +18,7 @@ public class CursoUfgService {
 		this.setSessionFactory(sessionFactory);
 	}
 
-	public void salvarCurso(CursoUfg curso){
+	public void salvar(CursoUfg curso){
 		Session session = getSessionFactory().openSession();
 		Transaction transaction = session.beginTransaction();
 		
@@ -25,6 +27,14 @@ public class CursoUfgService {
 		transaction.commit();
 		session.close();
 	}
+	
+	public List<CursoUfg> listar(){
+		Session session = getSessionFactory().openSession();
+		List<CursoUfg> cursos = new CursoUfgRepository(session).listar();
+		session.close();
+		return cursos;
+	}
+	
 
 	public SessionFactory getSessionFactory() {
 		return sessionFactory;

@@ -9,7 +9,7 @@ import javax.persistence.Id;
 
 import br.inf.ufg.sempreufg.dominio.enuns.TipoInstituicao;
 
-@Entity(name="InstituicaoEnsinoMedio")
+@Entity(name="instituicaoensinomedio")
 public class InstituicaoEnsinoMedio {
 	
 	@Id

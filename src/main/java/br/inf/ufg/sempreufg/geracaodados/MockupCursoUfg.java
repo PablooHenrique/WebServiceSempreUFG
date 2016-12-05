@@ -9,7 +9,6 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
 
-import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 
 import br.inf.ufg.sempreufg.dominio.CursoUfg;
@@ -30,7 +29,7 @@ public class MockupCursoUfg extends Mockup {
 		
 		for (String nome : nomes) {
 			CursoUfg curso = criarCurso(nome, nivel);
-			new CursoUfgService(sessionFactory).salvarCurso(curso);
+			new CursoUfgService(sessionFactory).salvar(curso);
 		}
 	}
 	
@@ -48,7 +47,7 @@ public class MockupCursoUfg extends Mockup {
 	}
 
 	private List<String> extrairDadosArquivo(String diretorio) {
-		File arquivoCursoGraduacao = carregarArquivoCursosGraducao(diretorio);
+		File arquivoCursoGraduacao = carregarArquivo(diretorio);
 		BufferedReader br;
 		List<String> nomesDoCurso = new ArrayList<String>();
 

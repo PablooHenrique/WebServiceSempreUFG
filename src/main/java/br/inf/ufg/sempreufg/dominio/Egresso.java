@@ -19,7 +19,7 @@ import br.inf.ufg.sempreufg.dominio.enuns.Sexo;
 import br.inf.ufg.sempreufg.dominio.enuns.VisibilidadeDados;
 
 
-@Entity(name="Egresso")
+@Entity(name="egresso")
 public class Egresso {
 	
 	@Id
