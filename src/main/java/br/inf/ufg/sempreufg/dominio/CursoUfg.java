@@ -1,9 +1,13 @@
 package br.inf.ufg.sempreufg.dominio;
 
 import javax.persistence.Entity;
+import javax.persistence.EnumType;
+import javax.persistence.Enumerated;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+
+import org.hibernate.annotations.Type;
 
 import br.inf.ufg.sempreufg.dominio.enuns.Nivel;
 import br.inf.ufg.sempreufg.dominio.enuns.TipoResolucao;
@@ -15,12 +19,22 @@ public class CursoUfg {
 	@Id
 	@GeneratedValue(strategy=GenerationType.AUTO)
 	private long id;
+	
 	private String codigo;
 	private String nome;
+	
+	@Enumerated(EnumType.STRING)
 	private Nivel nivel;
+	
+	@Enumerated(EnumType.STRING)
 	private TipoResolucao tipoResolucao;
+	
 	private int numeroResolucao;
+	
+	@Type(type="true_false")
 	private boolean ePresencial;
+	
+	@Enumerated(EnumType.STRING)
 	private Turno turno;
 	
 	public Nivel getNivel() {
@@ -59,16 +73,16 @@ public class CursoUfg {
 	public void setNome(String nome) {
 		this.nome = nome;
 	}
-	public String getCodigo() {
-		return codigo;
-	}
-	public void setCodigo(String codigo) {
-		this.codigo = codigo;
-	}
 	public long getId() {
 		return id;
 	}
 	public void setId(long id) {
 		this.id = id;
+	}
+	public String getCodigo() {
+		return codigo;
+	}
+	public void setCodigo(String codigo) {
+		this.codigo = codigo;
 	}
 }

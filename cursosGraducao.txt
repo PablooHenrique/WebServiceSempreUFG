@@ -1,0 +1,62 @@
+Agronomia
+Medicina Veterinaria
+Zootecnia
+Biomedicina
+Ciencias Biologicas
+Biotecnologia
+Ecologia e Analise Ambiental
+Enfermagem
+Medicina
+Farmacia
+Nutricao
+Odontologia
+Fisioterapia
+Ciencia da Computacao
+Fisica
+Matematica
+Quimica
+Estatistica
+Ciencias Ambientais
+Gestao da Informacao
+Sistemas de Informacao
+Matematica industrial
+Engenharia de software
+Engenharia de Alimentos
+Engenharia de Minas
+Engenharia de Producao
+Engenharia Civil
+Engenharia Eletrica
+Engenharia de Computacao
+Engenharia Ambiental
+Engenharia Florestal
+Engenharia Mecanica
+Engenharia Quimica
+Ciencias Sociais
+Educacao Fisica
+Filosofia
+Geografia
+História
+Pedagogia
+Psicologia
+Relacões Internacionais
+Administracao
+Arquitetura e Urbanismo
+Biblioteconomia
+Ciencias Contabeis
+Ciencias Econômicas
+Comunicacao Social
+Direito
+Design de Ambientes
+Design Grafico
+Design de Moda
+Gestão da Informacao
+Museologia
+Servico Social
+Letras
+Artes Cenicas
+Artes Visuais
+Musica
+Educacao Musical
+Musicoterapia
+Danca
+Direcao de Arte
