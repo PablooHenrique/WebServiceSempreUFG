@@ -30,13 +30,22 @@ public class EgressoService {
 	public List<Egresso> listarPorMatricula(List<String> matriculas){
 		Session session = getSessionFactory().openSession();
 		List<Egresso> egressos = new EgressoRepository(session).listarPorMatricula(matriculas);
-		session.close();
+		//TODO Tenho que pensar em uma forma de resolver isso aqui, o gson e hibernate estao conflitando
+//		session.close();
 		return egressos;
 	}
 	
 	public List<Egresso> listarPorCursos(List<String> identificadorCursos){
 		Session session = getSessionFactory().openSession();
 		List<Egresso> egressos = new EgressoRepository(session).listarPorCurso(identificadorCursos);
+		//TODO Tenho que pensar em uma forma de resolver isso aqui, o gson e hibernate estao conflitando
+//		session.close();
+		return egressos;
+	}
+	
+	public List<Egresso> listar(){
+		Session session = getSessionFactory().openSession();
+		List<Egresso> egressos = new EgressoRepository(session).listar();
 		return egressos;
 	}
 

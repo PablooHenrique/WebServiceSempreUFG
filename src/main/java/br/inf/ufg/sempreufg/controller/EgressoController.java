@@ -30,6 +30,27 @@ public class EgressoController {
 		
 		return egressos;
 	}
+	
+	public List<Egresso> listarPorIdentificadorCurso(String codigoCurso) {
+		EgressoService service = new EgressoService(getSessionFactory());
+		List<String> list = new ArrayList<String>();
+		
+		String[] codigos = codigoCurso.split(",");
+		
+		for (int i = 0; i < codigos.length; i++) {
+			list.add(codigos[i]);
+		}
+		
+		List<Egresso> egressos = service.listarPorCursos(list);
+		
+		return egressos;
+	}
+	
+	public List<Egresso> listar() {
+		EgressoService service = new EgressoService(getSessionFactory());
+		List<Egresso> egressos = service.listar();
+		return egressos;
+	}
 
 	public SessionFactory getSessionFactory() {
 		return sessionFactory;
@@ -38,4 +59,5 @@ public class EgressoController {
 	public void setSessionFactory(SessionFactory sessionFactory) {
 		this.sessionFactory = sessionFactory;
 	}
+	
 }

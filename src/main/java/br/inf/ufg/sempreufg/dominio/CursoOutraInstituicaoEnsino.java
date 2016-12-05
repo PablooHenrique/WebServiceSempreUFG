@@ -17,7 +17,10 @@ public class CursoOutraInstituicaoEnsino {
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private long id;
 	private String nome;
+	
+	@Enumerated(EnumType.STRING)
 	private Nivel nivel;
+	
 	private String nomeUnidadeAcademica;
 	private String IesDoCurso;
 	
