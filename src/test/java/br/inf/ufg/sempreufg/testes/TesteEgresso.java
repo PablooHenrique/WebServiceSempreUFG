@@ -16,8 +16,8 @@ public class TesteEgresso {
 	@Test
 	public void testeListarPorMatricula(){
 		List<String> matriculas = new ArrayList<String>();
-		matriculas.add("451835922");
-		matriculas.add("094623167");
+		matriculas.add("977410894");
+		matriculas.add("362765717");
 		
 		SessionFactory sessionFactory = Application.getInstance().getSessionFactory();
 		EgressoService egressoService = new EgressoService(sessionFactory);
@@ -29,8 +29,8 @@ public class TesteEgresso {
 	@Test
 	public void testeListarPorCurso(){
 		List<String> codigoCurso = new ArrayList<String>();
-		codigoCurso.add("WNW8598");
-		codigoCurso.add("KCW1696");
+		codigoCurso.add("CKL7474");
+		codigoCurso.add("PNP5021");
 		
 		SessionFactory sessionFactory = Application.getInstance().getSessionFactory();
 		EgressoService egressoService = new EgressoService(sessionFactory);

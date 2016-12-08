@@ -59,5 +59,4 @@ public class EgressoController {
 	public void setSessionFactory(SessionFactory sessionFactory) {
 		this.sessionFactory = sessionFactory;
 	}
-	
 }

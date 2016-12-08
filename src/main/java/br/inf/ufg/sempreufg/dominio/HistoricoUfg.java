@@ -1,9 +1,12 @@
 package br.inf.ufg.sempreufg.dominio;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.OneToOne;
 
 @Entity(name="historicoufg")
 public class HistoricoUfg {
@@ -17,6 +20,10 @@ public class HistoricoUfg {
 	private int mesFinal;
 	private int anoFinal;
 	private String tituloTrabalhoFinal;
+	
+	@OneToOne(cascade = CascadeType.ALL)
+	@JoinColumn(name = "cursoUfg")
+	private CursoUfg cursoUfg;
 	
 	public int getNumeroMatriculaCurso() {
 		return numeroMatriculaCurso;
@@ -59,5 +66,11 @@ public class HistoricoUfg {
 	}
 	public void setId(long id) {
 		this.id = id;
+	}
+	public CursoUfg getCursoUfg() {
+		return cursoUfg;
+	}
+	public void setCursoUfg(CursoUfg cursoUfg) {
+		this.cursoUfg = cursoUfg;
 	}
 }

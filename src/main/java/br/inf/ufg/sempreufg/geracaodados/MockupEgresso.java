@@ -14,6 +14,7 @@ import org.hibernate.SessionFactory;
 
 import br.inf.ufg.sempreufg.dominio.CursoUfg;
 import br.inf.ufg.sempreufg.dominio.Egresso;
+import br.inf.ufg.sempreufg.dominio.HistoricoUfg;
 import br.inf.ufg.sempreufg.dominio.enuns.Sexo;
 import br.inf.ufg.sempreufg.dominio.enuns.VisibilidadeDados;
 import br.inf.ufg.sempreufg.main.Application;
@@ -39,14 +40,12 @@ public class MockupEgresso extends Mockup{
 			String[] infoDataNascimento = infoEgresso[1].split("/");
 			dataNascimento = LocalDate.of(Integer.valueOf(infoDataNascimento[2]), Integer.valueOf(infoDataNascimento[1]), Integer.valueOf(infoDataNascimento[0]));
 			
-			Egresso egresso = criarEgresso(criarListaCursoUfg(), infoEgresso[0], infoEgresso[3], dataNascimento, sexo);
+			Egresso egresso = criarEgresso(criarListaHistoricoUfg(), infoEgresso[0], infoEgresso[3], dataNascimento, sexo);
 			new EgressoService(sessionFactory).salvar(egresso);
 		}
 	}
 	
-	private List<CursoUfg> criarListaCursoUfg() {
-		List<CursoUfg> cursos = new ArrayList<CursoUfg>();
-		
+	private CursoUfg criarCursoUfg() {
 		SessionFactory sessionFactory = Application.getInstance().getSessionFactory();
 		List<CursoUfg> cursosService = new CursoUfgService(sessionFactory).listar();
 		if (cursosService != null) {
@@ -55,9 +54,18 @@ public class MockupEgresso extends Mockup{
 			if (posicao == 0) {
 				posicao = 1;
 			}
-			cursos.add(cursosService.get(posicao));
+			return cursosService.get(posicao);
 		}
-		return cursos;
+		return null;
+	}
+	
+	private List<HistoricoUfg> criarListaHistoricoUfg() {
+		HistoricoUfg historicoUfg = new HistoricoUfg();
+		historicoUfg.setCursoUfg(criarCursoUfg());
+		
+		List<HistoricoUfg> historicosUfg = new ArrayList<HistoricoUfg>();
+		historicosUfg.add(historicoUfg);
+		return historicosUfg;
 	}
 
 	private String gerarMatricula(){
@@ -100,14 +108,13 @@ public class MockupEgresso extends Mockup{
 		return egressos;
 	}
 	
-	private Egresso criarEgresso(List<CursoUfg> cursosUfg, String nome, String nomeMae, LocalDate dataNascimento, Sexo sexo){
+	private Egresso criarEgresso(List<HistoricoUfg> historicosUfg, String nome, String nomeMae, LocalDate dataNascimento, Sexo sexo){
 		Egresso egresso = new Egresso();
 		egresso.setNumeroMatricula(gerarMatricula());
-		egresso.setCursosUfg(cursosUfg);
 		egresso.setDataNascimento(dataNascimento);
 		egresso.setEmail("ufg@email.com");
+		egresso.setHistoricoUfg(historicosUfg);
 //		egresso.setHistoricoEnsinoMedio(new HistoricoEnsinoMedio());
-//		egresso.setHistoricoUfg(new ArrayList<HistoricoUfg>());
 //		egresso.setCursosDeOutraInstituicaoEnsino(new ArrayList<CursoOutraInstituicaoEnsino>());
 //		egresso.setInstituicaoEnsinoMedio(new InstituicaoEnsinoMedio());
 		egresso.setNome(nome);

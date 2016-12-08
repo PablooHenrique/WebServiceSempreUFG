@@ -23,8 +23,4 @@ public class Application {
 	public SessionFactory getSessionFactory() {
 		return sessionFactory;
 	}
-	
-	public static void main(String[] args) {
-		SessionFactory factory = Application.getInstance().sessionFactory;
-	}
 }

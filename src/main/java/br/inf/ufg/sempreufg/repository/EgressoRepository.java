@@ -39,7 +39,11 @@ public class EgressoRepository extends AbstractRepository<Egresso>{
 
 	public List<Egresso> listarPorCurso(List<String> identificadorCursos) {
 		StringBuilder jpql = new StringBuilder();
-		jpql.append("select e from egresso e inner join e.cursosUfg c where c.codigo in (");
+		
+		jpql.append("select e from egresso e inner join e.historicoUfg h ")
+			.append("inner join h.cursoUfg c ")
+			.append("where c.codigo in (");
+		
 		
 		for (int i = 0; i < identificadorCursos.size(); i++) {
 			jpql.append(":codigo"+i);

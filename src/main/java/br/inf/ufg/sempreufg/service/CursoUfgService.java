@@ -35,7 +35,6 @@ public class CursoUfgService {
 		return cursos;
 	}
 	
-
 	public SessionFactory getSessionFactory() {
 		return sessionFactory;
 	}

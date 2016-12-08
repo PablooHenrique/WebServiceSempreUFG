@@ -35,7 +35,7 @@ public class Egresso {
 	
 	private String email;
 	
-	//Serico não vai exportar imagens
+	//Servico não vai exportar imagens
 	private String fotoPrincipal;
 	private String fotosAdicionais;
 	
@@ -57,10 +57,6 @@ public class Egresso {
 	@ManyToMany(cascade = CascadeType.ALL)
     @JoinTable(name="egresso_curso_outra_instituicao_ensino", joinColumns={@JoinColumn(name="egresso")}, inverseJoinColumns={@JoinColumn(name="cursos_outra_instituicao_ensino")})
 	private List<CursoOutraInstituicaoEnsino> cursosDeOutraInstituicaoEnsino;
-	
-	@ManyToMany(cascade = CascadeType.ALL)
-    @JoinTable(name="egresso_curso_ufg", joinColumns={@JoinColumn(name="egresso")}, inverseJoinColumns={@JoinColumn(name="cursos_ufg")})
-	private List<CursoUfg> cursosUfg;
 	
 	@ManyToMany(cascade = CascadeType.ALL)
     @JoinTable(name="egresso_historico_ufg", joinColumns={@JoinColumn(name="egresso")}, inverseJoinColumns={@JoinColumn(name="historico_ufg")})
@@ -176,14 +172,6 @@ public class Egresso {
 
 	public void setCursosDeOutraInstituicaoEnsino(List<CursoOutraInstituicaoEnsino> cursosDeOutraInstituicaoEnsino) {
 		this.cursosDeOutraInstituicaoEnsino = cursosDeOutraInstituicaoEnsino;
-	}
-
-	public List<CursoUfg> getCursosUfg() {
-		return cursosUfg;
-	}
-
-	public void setCursosUfg(List<CursoUfg> cursosUfg) {
-		this.cursosUfg = cursosUfg;
 	}
 
 	public List<HistoricoUfg> getHistoricoUfg() {
