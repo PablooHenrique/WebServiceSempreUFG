@@ -12,7 +12,7 @@ public class GeraradorDados {
 	
 	public void gerarDadosGraduacao(){
 		MockupCursoUfg mockupCursoUfg = new MockupCursoUfg();
-		mockupCursoUfg.gerarCursosUfg("/cursosGraducao.txt", Nivel.BACHERELADO);
+		mockupCursoUfg.gerarCursosUfg("/cursosGraducao.txt", Nivel.BACHARELADO);
 	}
 	
 	public void gerarDadosPosGraduacao(){
